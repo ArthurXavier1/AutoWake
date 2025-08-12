@@ -1,0 +1,72 @@
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #567ebb;
+    }
+
+    img {
+      height: 200px;
+      width: 245px;
+      margin-top: -20px;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 245px;
+      background-color: #343a40;
+      padding-top: 20px;
+    }
+
+    .sidebar a {
+      display: block;
+      color: #ffffff;
+      padding: 15px 20px;
+      text-decoration: none;
+    }
+
+    .sidebar a:hover,
+    .sidebar a.active {
+      background-color: #495057;
+    }
+
+    .main-content {
+      margin-left: 220px;
+      padding: 20px;
+    }
+
+    .hero {
+      background: url('https://via.placeholder.com/1200x400') no-repeat center center;
+      background-size: cover;
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+      border-radius: 10px;
+    }
+
+    .container {
+      color: white
+    }
+
+    .container1 {
+      color: white;
+      text-align: center;
+
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 80px;
+      width: 245px;
+    }
+
+    footer a {
+      color: #ccc;
+      text-decoration: none;
+    }
