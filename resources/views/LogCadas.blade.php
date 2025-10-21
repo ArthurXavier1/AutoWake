@@ -272,24 +272,19 @@
 </section>
 
 <script>
-  // Função para enviar dados via fetch
   async function postData(url = '', data = {}) {
     const response = await fetch(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Accept': 'application/json',
-        // Se precisar, adicione token CSRF aqui:
-        // 'X-CSRF-TOKEN': 'TOKEN_AQUI'
+        'Accept': 'application/json'
       },
-      body: JSON.stringify(data),
-      credentials: 'same-origin' // para cookies/session
+      body: JSON.stringify(data)
     });
-    const respData = await response.json();
+    const respData = await response.json().catch(() => ({}));
     return { status: response.status, data: respData };
   }
 
-  // Toggle entre Login e Cadastro
   const card = document.getElementById('card');
   const loginBtn = document.querySelector('.loginbutton');
   const cadasBtn = document.querySelector('.cadasbutton');
@@ -304,11 +299,10 @@
     card.classList.add('CadastroActive');
   });
 
-  // Formulários e resultados
   const loginForm = document.getElementById('loginForm');
-  const cadastroForm = document.getElementById('cadastrofrom'); // corrigido para mesmo id do seu form
+  const cadastroForm = document.getElementById('cadastroForm');
   const loginResult = document.getElementById('loginResult');
-  const cadastroResult = document.getElementById('registerResult');
+  const cadastroResult = document.getElementById('result');
 
   // Cadastro
   cadastroForm.addEventListener('submit', async function(e) {
@@ -316,33 +310,29 @@
     cadastroResult.style.color = 'red';
     cadastroResult.textContent = '';
 
-    const name = cadastroForm.name.value.trim();
-    const email = cadastroForm.registerEmail.value.trim();
-    const password = cadastroForm.registerPassword.value;
-    const confirmPassword = cadastroForm.registerConfirmPassword.value;
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('registerEmail').value.trim();
+    const password = document.getElementById('registerPassword').value;
+    const confirmPassword = document.getElementById('registerConfirmPassword').value;
 
-    if(!name || !email || !password || !confirmPassword){
+    if (!name || !email || !password || !confirmPassword) {
       cadastroResult.textContent = 'Por favor, preencha todos os campos.';
       return;
     }
-    if(password !== confirmPassword){
+
+    if (password !== confirmPassword) {
       cadastroResult.textContent = 'As senhas não coincidem.';
       return;
     }
 
-    // Chama API de cadastro
     const { status, data } = await postData('/register', { name, email, password });
 
-    if(status === 200 || status === 201){
+    if (status >= 200 && status < 300) {
       cadastroResult.style.color = 'green';
       cadastroResult.textContent = data.message || 'Cadastro realizado com sucesso!';
       cadastroForm.reset();
     } else {
-      if(data.errors){
-        cadastroResult.textContent = Object.values(data.errors).flat().join(' ');
-      } else {
-        cadastroResult.textContent = data.message || 'Erro ao cadastrar';
-      }
+      cadastroResult.textContent = data.message || 'Erro ao cadastrar';
     }
   });
 
@@ -352,23 +342,21 @@
     loginResult.style.color = 'red';
     loginResult.textContent = '';
 
-    const email = loginForm.loginEmail.value.trim();
-    const password = loginForm.loginPassword.value;
+    const email = document.getElementById('loginEmail').value.trim();
+    const password = document.getElementById('loginPassword').value;
 
-    if(!email || !password){
+    if (!email || !password) {
       loginResult.textContent = 'Por favor, preencha todos os campos.';
       return;
     }
 
-    // Chama API de login
     const { status, data } = await postData('/login', { email, password });
 
-    if(status === 200){
+    if (status >= 200 && status < 300) {
       loginResult.style.color = 'green';
       loginResult.textContent = 'Login realizado com sucesso!';
       console.log('Token:', data.access_token);
-      // Exemplo: salvar token localmente
-      // localStorage.setItem('token', data.access_token);
+      // Exemplo: localStorage.setItem('token', data.access_token);
     } else {
       loginResult.textContent = data.message || 'Erro no login';
     }
