@@ -1,0 +1,77 @@
+body {
+    font-family: 'DejaVu Sans', sans-serif;
+    padding: 30px;
+    background-image: url('fundo.png');
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+    color: #dce0e6;
+}
+
+.container {
+    background-color: rgba(31, 31, 32, 0.6);
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 1000px;
+    margin: auto;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    margin-top: 5%;
+}
+
+h1 {
+    color: #4eaff7;
+    margin-bottom: 25px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #2b2b2b;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 10px;
+    border: 1px solid #444;
+    text-align: left;
+}
+
+table th {
+    background-color: #3b3b3b;
+    color: #ffffff;
+}
+
+input, select, button {
+    padding: 8px;
+    margin: 5px;
+    border: none;
+    border-radius: 6px;
+}
+
+input[type="text"], input[type="date"] {
+    width: 180px;
+}
+
+button {
+    background-color: #4eaff7;
+    color: white;
+    cursor: pointer;
+}
+
+.form-inline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.actions form {
+    display: inline;
+}
+
+.img-icon {
+    width: 100px;
+    margin-bottom: 20px;
+}

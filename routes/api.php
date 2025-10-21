@@ -1,11 +1,53 @@
 <?php
 
+use App\Http\Controllers\Auth\VerificationController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\FilmesController;
+use App\Http\Controllers\Relatorio_reactController;
+use App\Http\Controllers\Funcionario_reactController;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use App\Mail\VerificationCodeMail;
+
+
+Route::post('/api/enviar-codigo', [VerificationController::class, 'enviarCodigo']);
+
+
+Route::post('/api/confirmacao/validar', function(Request $request) {
+    $request->validate([
+        'email' => 'required|email',
+        'nome' => 'required|string',
+        'codigo' => 'required|digits:6',
+    ]);
+
+    $user = User::where('email', $request->email)
+                ->where('name', $request->nome)
+                ->first();
+
+    if (!$user) {
+        return response()->json([
+            'status' => 'erro',
+            'mensagem' => 'Usuário não encontrado.'
+        ], 404);
+    }
+
+    if ($user->codigo === $request->codigo) {
+        $user->email_confirmado = true;
+        $user->save();
+
+        return response()->json([
+            'status' => 'sucesso',
+            'mensagem' => 'Código confirmado com sucesso!'
+        ]);
+    }
+
+    return response()->json([
+        'status' => 'erro',
+        'mensagem' => 'Código inválido.'
+    ], 422);
+});
+
 
 
 Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
@@ -13,10 +55,10 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
 });
 
 
-Route::get('/filme/certificado/{id}', [FilmesController::class, 'certificado']);
-Route::post('/filme/salvar', [FilmesController::class, 'salvar_vela']);
-Route::put('/filmes/editar/{id}', [FilmesController::class, 'editar_filme']);
-Route::delete('/filmes/deletar/{id}', [FilmesController::class, 'deletar_filme']);
+Route::apiResource('funcionarios', Funcionario_reactController::class);
+Route::apiResource('relatorios', Relatorio_reactController::class);
+
+
 
 Route::post('/register', function(Request $request) {
     $request->validate([
@@ -27,7 +69,6 @@ Route::post('/register', function(Request $request) {
 
     $numericCode = rand(100000, 999999);
 
-
     $user = User::create([
         "email" => $request->email,
         "name" => $request->name,
@@ -35,10 +76,11 @@ Route::post('/register', function(Request $request) {
         "codigo" => $numericCode
     ]);
 
+    // Envia o e-mail com o código
+    Mail::to($user->email)->send(new VerificationCodeMail($user));
 
     return response()->json([
-        "message" => "Cadastro realizado com sucesso",
-        "user" => $user
+        "message" => "Cadastro realizado com sucesso. Verifique seu e-mail.",
     ]);
 });
 

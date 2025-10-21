@@ -1,30 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-weight: 400;
 }
 
-body{
+body {
     color: white;
     font-family: "Nunito", sans-serif;
 }
 
-form{
+form {
     display: flex;
     flex-direction: column;
     gap: 16px;
-
-    button{
-        background: linear-gradient(90deg, #2b4c7e 0%, #dce0e688 100%);
-        border: 2px solid #2b4c7e;
-    }
 }
 
-input{
+form button {
+    background: linear-gradient(90deg, #2b4c7e 0%, #dce0e688 100%);
+    border: 2px solid #2b4c7e;
+}
+
+input {
     padding: 12px 20px;
     border-radius: 12px;
     font-size: 16px;
@@ -34,11 +34,11 @@ input{
     border: none;
 }
 
-input::placeholder{
+input::placeholder {
     color: rgba(255, 255, 255, 0.504);
 }
 
-button{
+button {
     padding: 12px 20px;
     border-radius: 12px;
     border: none;
@@ -52,19 +52,19 @@ button{
     transition: all .3s;
 }
 
-button:hover{
+button:hover {
     transform: translateY(-2px);
 }
 
-h2{
+h2 {
     margin-bottom: 32px;
     font-size: 45px;
     text-align: center;
     font-weight: bold;
-    font-family: "Lexend", sans-serif;;
+    font-family: "Lexend", sans-serif;
 }
 
-p{
+p {
     margin-bottom: 32px;
     width: 400px;
     text-align: center;
@@ -72,7 +72,21 @@ p{
     color: rgba(255, 255, 255, 0.582);
 }
 
-.containerPai{
+a {
+    color: #2b4c7e;
+    font-size: 14px;
+    position: relative;
+    left: 40%;
+    font-weight: bold;
+    top: -14px;
+    transition: .5s ease;
+}
+
+a:hover {
+    color: #dce0e6;
+}
+
+.containerPai {
     width: 100%;
     height: 100vh;
     background-color: #000000;
@@ -81,7 +95,7 @@ p{
     align-items: center;
 }
 
-.card{
+.card {
     width: 80%;
     height: 90vh;
     background-image: url(img/uiuiu.png);
@@ -95,7 +109,7 @@ p{
     overflow: hidden;
 }
 
-.esquerda, .direita{
+.esquerda, .direita {
     width: 50%;
     height: 100%;
     display: flex;
@@ -105,41 +119,37 @@ p{
     z-index: 1;
 }
 
-.FormLogin, .containerLogin, .FormCadastro, .containerCadastro{
+.FormLogin, .containerLogin, .FormCadastro, .containerCadastro {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.containerLogin, .containerCadastro{
+.containerLogin, .containerCadastro {
     position: absolute;
-
-    h2, p{
-        color: #dce0e6b2;
-    }
-
-    button{
-        background-color: rgba(255, 255, 255, 0.34);
-        border: 1px solid #dce0e69a;
-    }
 }
 
-.containerCadastro h2, p{
-    color: #414040b8;
+.containerLogin h2, .containerLogin p,
+.containerCadastro h2, .containerCadastro p {
+    color: #dce0e6b2;
 }
 
-img{
+.containerLogin button, .containerCadastro button {
+    background-color: rgba(255, 255, 255, 0.34);
+    border: 1px solid #dce0e69a;
+}
+
+img {
     width: 30%;
     position: relative;
     top: -20%;
 }
 
-/*fundo movel*/
-.card::after{
+.card::after {
     width: 100%;
     height: 100%;
-    content:"";
+    content: "";
     background-image: url(img/fundo.png);
     position: absolute;
     top: 0;
@@ -147,83 +157,104 @@ img{
     background-size: cover;
     background-position: center;
     z-index: 0;
+    filter: brightness(75%);
 }
 
-/*Login Active*/
-.card.LoginActive .containerLogin{
+.card.LoginActive .containerLogin {
     opacity: 0;
     pointer-events: none;
 }
 
-.card.LoginActive .containerCadastro{
+.card.LoginActive .containerCadastro {
     transform: translateX(0%);
     transition: all .3s .3s;
     opacity: 1;
-}
+   
+}  
 
-.card.LoginActive .FormLogin{
+.card.LoginActive .FormLogin {
     transition: all .3s .3s;
     opacity: 1;
 }
 
-.card.LoginActive .FormCadastro{
+.card.LoginActive .FormCadastro {
     opacity: 0;
     pointer-events: none;
 }
 
-.card.LoginActive::after{
+.card.LoginActive::after {
     transform: translateX(50%);
 }
 
-/*Cadastro Active*/
-.card.cadastroActive .containerCadastro{
+.card.cadastroActive .containerCadastro {
     opacity: 0;
     pointer-events: none;
 }
 
-.card.cadastroActive .FormLogin{
+.card.cadastroActive .FormLogin {
     opacity: 0;
     pointer-events: none;
 }
-
-.card.cadastroActive::after{
+.card.cadastroActive::after {
     transform: translateX(-50%);
 }
 
-.card.cadastroActive .containerLogin{
+.card.cadastroActive .containerLogin {
     transform: translateX(0%);
-    transition: all .3s .3s;
+    transition: all 0.3s ease 0.3s;
     opacity: 1;
 }
 
-.card.cadastroActive .FormCadastro{
-    transition: all .3s .3s;
+.card.cadastroActive .FormCadastro {
+    transition: all 0.3s ease 0.3s;
     opacity: 1;
 }
 
-/*transições*/
-.card::after{
-    transition: all .5s;
+.card::after {
+    transition: all 0.5s ease;
 }
 
-.containerCadastro{
-    transition: all .3s 0;
+.containerCadastro {
+    transition: all 0.3s ease 0s;
     transform: translateX(200%);
     opacity: 0;
 }
 
-.FormLogin{
+.FormLogin {
     opacity: 0;
-    transition: all .3s 0;
+    transition: all 0.3s ease 0s;
+    position: absolute;
 }
 
-.containerLogin{
-    transition: all .3s 0;
+.containerLogin {
+    transition: all 0.3s ease 0s;
     transform: translateX(-200%);
     opacity: 0;
 }
 
-.FormCadastro{
+.FormCadastro {
     opacity: 0;
-    transition: all .3s 0;
+    transition: all 0.3s ease 0s;
+    position: absolute;
+}
+
+.esquerda img {
+    width: 35%;
+    position: relative;
+    top: -33%;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.card.LoginActive .esquerda img {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity .3s .3s ease;
+}
+
+.card.cadastroActive .esquerda img {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s ease;
 }
