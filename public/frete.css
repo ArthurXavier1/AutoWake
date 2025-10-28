@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: 400;
+}
+
+body {
+    font-family: "Nunito", sans-serif;
+    background-image: url('Img/fundo1.png');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+.containerPai {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    top: -10px;  /* Abaixando a logo para ficar mais próxima do card */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 110px;  /* Diminuindo ainda mais a largura da logo */
+    height: auto;
+    z-index: 0;
+}
+
+.card {
+    background-color: rgba(86, 124, 187, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 30px 35px 30px rgba(0, 0, 0, 0.727);
+    padding: 15px 20px; /* Reduzido o padding ainda mais */
+    width: 50%; /* Largura do card diminuída */
+    min-height: 300px; /* Diminuindo mais a altura mínima do card */
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.FormCadastro {
+    width: 100%;
+}
+
+h2 {
+    text-align: center;
+    font-family: "Lexend", sans-serif;
+    font-weight: bold;
+    font-size: 30px; /* Diminuindo o tamanho do título */
+    margin-bottom: 15px;
+    color: #dce0e6;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px; /* Reduzindo o padding dos inputs */
+    margin-bottom: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    background-color: #dce0e6;
+    color: #1f1f20;
+    box-sizing: border-box;
+}
+
+input::placeholder {
+    font-weight: bold;
+    color: #1f1f20;
+}
+
+button {
+    background: linear-gradient(90deg, #2b4c7e 0%, #dce0e688 100%);
+    border: 2px solid #2b4c7e;
+    color: #1f1f20;
+    height: 40px;
+    border-radius: 7px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform .3s ease;
+    width: 100%; /* Faz o botão ocupar 100% da largura */
+    margin-top: 20px; /* Adicionando espaço acima do botão */
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #dce0e6;
+    margin-bottom: 5px;
+    display: block;
+}
+
+select {
+    color: #1f1f20;
+    font-weight: bold;
+    background-color: #dce0e6;
+}
+
+option {
+    background-color: #567ebb;
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 80%; /* Reduzindo mais a largura do card em telas menores */
+    }
+
+    .logo {
+        width: 100px; /* Logo um pouco menor para telas pequenas */
+    }
+}

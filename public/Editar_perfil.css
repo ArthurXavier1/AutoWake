@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&family=Dancing+Script:wght@400;600&display=swap');
+
+   body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #001f4d;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .open-btn {
+      margin: 30px;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 12px;
+      background: #0040cc;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .open-btn:hover {
+      background: #0066ff;
+      transform: scale(1.05);
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 50, 0.6);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(6px);
+    }
+
+    .edit-container {
+  background: rgba(10, 40, 100, 0.95);
+  background-size: cover;      
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 30px;
+  width: 350px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  animation: fadeIn 0.4s ease;
+  color: white;
+
+}
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(-20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    .edit-container h2 {
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: #567ebb;
+      margin: 10px auto;
+      overflow: hidden;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .profile-pic input { display: none; }
+    .profile-pic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+
+    }.edit-container {
+  position: relative;  
+  background:#2b4c7e;
+  border-radius: 18px;
+  padding: 30px;
+  width: 350px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  animation: fadeIn 0.4s ease;
+  overflow: hidden;  
+}
+
+
+.edit-container::before,
+.edit-container::after {
+  content: "";
+  position: absolute;
+  width: 120%;    
+  height: 30px;
+  background: repeating-linear-gradient(
+    to right,
+    rgba(255,255,255,0.15) 0px,
+    rgba(255,255,255,0.15) 20px,
+    transparent 20px,
+    transparent 40px
+  );
+  transform: rotate(-15deg);
+  left: -10%;
+}
+
+.edit-container::after {
+  bottom: -10px;
+  transform: rotate(15deg);
+}
+
+    #fotoHint {
+      display: block;
+      margin-top: 8px;
+      font-size: 13px;
+      color: #ddd;
+    }
+
+    .form-group {
+      margin: 15px 0;
+      text-align: left;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 12px;
+      border: none;
+      outline: none;
+      background: rgba(0, 0, 0, 0.2);
+      color: white;
+      font-size: 14px;
+       align-items: center;  
+  justify-content: center;
+    }
+    .form-group input::placeholder {
+  color: #ccc;      
+  opacity: 1;          
+}
+
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+    .buttons button {
+      flex: 1;
+      margin: 0 6px;
+      padding: 10px;
+      border: none;
+      border-radius: 12px;
+      background: #486fa9;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .buttons button:hover {
+      background: #7ea3ff;
+      transform: scale(1.05);
+    }
+
+    

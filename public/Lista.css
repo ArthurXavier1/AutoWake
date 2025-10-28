@@ -1,0 +1,100 @@
+    :root {
+      --cor-escura: #1C1C1C;
+      --azul-escuro: #274472;
+      --azul: #4A75C0;
+      --cinza-azulado: #5C6B7A;
+      --cinza-claro: #DDE2E6;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, var(--azul-escuro), var(--cor-escura));
+      color: var(--cinza-claro);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .navbar {
+      background-color: var(--cor-escura);
+    }
+    .navbar-brand {
+      font-weight: bold;
+      color: var(--cinza-claro);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .navbar-brand img {
+      height: 35px;
+      width: auto;
+    }
+    .navbar-brand:hover {
+      color: var(--azul);
+    }
+    .nav-link {
+      color: var(--cinza-claro);
+    }
+    .nav-link:hover {
+      color: var(--azul);
+    }
+
+    .container {
+      flex: 1;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+
+    h1 {
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 30px;
+      color: var(--cinza-claro);
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+    }
+
+    .list-group-item {
+      border: none;
+      margin-bottom: 10px;
+      border-radius: 12px;
+      padding: 18px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .list-group-item:nth-child(1) { background: var(--azul-escuro); color: white; }
+    .list-group-item:nth-child(2) { background: var(--azul); color: white; }
+    .list-group-item:nth-child(3) { background: var(--cinza-azulado); color: white; }
+    .list-group-item:nth-child(4) { background: var(--cinza-claro); color: var(--cor-escura); }
+
+    .list-group-item:hover {
+      transform: scale(1.03);
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.3);
+    }
+
+    #relogio {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: var(--cinza-claro);
+    }
+
+    footer {
+      background-color: var(--cor-escura);
+      color: var(--cinza-claro);
+      padding: 15px 0;
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: auto;
+    }
+    footer a {
+      color: var(--azul);
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }

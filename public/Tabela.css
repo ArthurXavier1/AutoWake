@@ -1,0 +1,174 @@
+      body {
+            font-family: 'Inter', sans-serif;
+            background: #567ebb;
+            border-radius: 10px;
+            box-shadow: 7px 7px 8px rgba(236, 230, 230, 0.1);
+            background-image: url("Img/fundocinza.png");
+            background-size: coverx;
+        }
+
+       .cabecalho {
+          width: 250px;
+          height: 200px
+        }       
+
+        header.cabecalho {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            background: transparent;
+        }
+        
+        header.cabecalho img {
+            width: 200px; 
+            height: auto;
+            display: block;
+        }
+        
+        h2 {
+        color: #ffffff;
+        font-size: 1.8rem;
+        margin: 40px 0 10px 40px;
+    
+        }
+
+        table {
+        margin: 40px auto;
+        width: 95%;
+        border-collapse: collapse;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    }
+
+        th, td {
+        padding: 14px 16px;
+        text-align: left;
+        font-size: 1rem;
+        color: #2d2d2d;
+        background-color: #d1cdd4;
+       
+        }
+
+        th {
+          background-color: #345678;
+          color: #ffffff;
+          text-transform: uppercase;
+          font-weight: 600;
+        
+        }
+        .tabelas-container {
+        font-size: 4rem;
+        text-align: left;
+        margin-bottom: 20px;
+        margin: 20px;
+        border-radius: 20px;
+        padding: 0 37px;
+        color: #d5d3d8;
+        height:90%;
+
+    }
+
+        .container-tabelas{
+            width: 100%;
+            height: 100%;
+            margin: 20px;
+            margin-left: 20px;
+            margin: 20px auto;
+            padding: 0 1px;
+            border-radius: 30%;
+            border-radius: 30px;
+            box-sizing: border-box;
+            margin-left: 20px;
+            margin-right: 20px;
+            width: calc(100% - 40px); 
+            
+            
+        }
+        .filtros {
+        width: 30%;
+        align-items: left;
+        justify-content: left;
+        gap: 30px;
+        margin-top: 3px;
+        margin-right: 1rem; 
+    }
+
+        .filtros label {
+        font-weight: 800;
+    }
+
+        .filtros select,
+        .filtros input {
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 1rem;
+        border:solid 1px;
+    }   
+
+        .categoria-input{
+        margin-bottom: 27px;
+        width: 20rem;
+        
+        flex-direction: column; 
+        color: #d1cdd4;
+        margin-left: -15rem;
+    }
+
+
+    .btn-filtrar {
+      background-color: #5baedf;
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 6px;
+      margin-right: 20px;
+      transition: background-color 0.3s ease;
+      height: 48px;
+    }
+
+    .btn-filtrar:hover {
+    background-color: #5393ce;
+}
+
+.footer-waves {
+  position: relative;
+  width: 100%; 
+  margin-top: 0; 
+  overflow: hidden; 
+}
+
+.footer-waves img {
+  width: 100%; 
+  height: auto; 
+  display: block;
+  object-fit: cover; 
+  margin-top: 0; 
+}
+
+footer {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  padding: 20px 0; 
+  margin-top: auto; 
+}
+
+.footer-waves {
+  position: relative;
+  width: 100%; 
+  margin-top: 0; 
+  overflow: hidden; 
+}
+
+.footer-waves img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover; 
+  margin-top: 0;
+  border: none;
+}
+

@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: 400;
+}
+
+body{
+    background-color: #1f1f20;
+    font-family: "Nunito", sans-serif;
+    overflow-x: hidden;
+}
+
+h5{
+    color: #0d1117;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: "Lexend", sans-serif;
+
+}
+
+p{
+  font-weight: bold;
+}
+
+/* menu lateral */
+.sidebar{
+  border-right: 4px solid #1f1f20;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 70px;
+  background: linear-gradient(180deg, #567ebb, #28455f);
+  font-size: 1.2rem;
+  padding-top: 20px;
+  transition: width 0.35s ease-in-out;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow: hidden;
+}
+
+.sidebar:hover{
+  width: 220px;
+}
+
+.sidebar .logo{
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 30px;
+  border-radius: 50%;
+  background: none;
+  padding: 6px;
+  transition: transform 0.3s ease;
+}
+
+.sidebar .logo:hover{
+  transform: rotate(10deg) scale(1.05);
+}
+
+.sidebar a{
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 12px 18px;
+  text-decoration: none;
+  margin: 5px 0;
+  color: #1f1f20;
+  transition: background 0.3s ease, color 0.3s ease;
+  overflow: hidden;
+}
+
+
+.sidebar a:hover{
+  background: #1f1f20;
+  color: #dce0e6;
+}
+
+.sidebar a.active{
+  color: #dce0e6;
+}
+
+.sidebar i{
+  min-width: 30px;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+.cadastro_caminhao{
+    width: 40%;
+    height:20px;
+    color: rgb(89, 105, 158);
+}
+
+.sidebar .link-text{
+  opacity: 0;
+  margin-left: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: opacity 0.25s ease;
+}
+
+.sidebar:hover .link-text{
+  opacity: 1;
+}
+
+/* carousel */
+.carousel-item img{
+   margin-top: 20px;
+   height: 550px;
+   object-fit: cover;
+   object-position: center;
+   justify-content: center;
+   align-items: center;
+}
+
+/* animação da frase */
+.hero{
+   font-size: 25px;
+   background-size: cover;
+   color: white;
+   padding: 100px 20px;
+   text-align: center;
+   border-radius: 10px;
+   margin-top: -80px;
+}
+
+#animated-text{
+   font-weight: bold;
+   color: #4eaff7;
+   transition: opacity 0.5s ease-in-out;
+}
+
+/* avisos */
+.card-aviso{
+    border: 2px solid #567ebb;
+    position: relative;
+    left: 10%;
+    background: #0c0c0c;
+    color: #dce0e6;
+    border-radius: 20px;
+    padding: 30px;
+    width: 580px;
+    font-family: "Lexend", sans-serif;
+    box-shadow: 0 4px 12px rgba(87, 80, 80, 0.4);
+    bottom: 40px;
+}
+
+.card-aviso h2{
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #4ade80;
+}
+
+.card-aviso ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.card-aviso li{
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 15px;
+    background-color: #0d1117;
+    border-radius: 15px;
+    padding: 16px;
+}
+
+.card-aviso li span{
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+/* atividades */
+.card-atividade{
+    border: 2px solid #567ebb;
+    position: relative;
+    left: 10%;
+    margin-top: 20px;
+    background: #0c0c0c;
+    color: #fff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(87, 80, 80, 0.4);;
+    max-width: 580px;
+    font-family: "Lexend", sans-serif;
+}
+
+.card-atividade h3{
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #2e2e2e;
+    padding-bottom: 6px;
+}
+
+.card-atividade ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.card-atividade ul li{
+    margin: 8px 0;
+    padding-left: 10px;
+    border-left: 3px solid #00d97e;
+    font-size: 0.95rem;
+}
+
+/* ranking */
+.card-ranking{
+    border: 2px solid #567ebb;
+    background: #0c0c0c;
+    color: #fff;
+    padding: 60px 30px;
+    border-radius: 16px;
+    width: 550px;
+    font-family: "Lexend", sans-serif;
+    float: right;
+    margin-right: 10%;
+    margin-top: -578px;
+    box-shadow: 0 4px 12px rgba(87, 80, 80, 0.4);
+}
+
+.card-ranking h3{
+    margin-bottom: 12px;
+    font-size: 1.8rem;
+    border-bottom: 1px solid #2e2e2e;
+    padding-bottom: 6px;
+}
+
+.card-ranking ol{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.card-ranking ol li{
+    margin: 10px 0;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: #141414;
+    font-size: 0.95rem;
+}
+
+.card-ranking ol li span{
+    font-weight: bold;
+    margin-right: 6px;
+    color: #3ba5ff;
+}
+
+/* top 3 */
+.card-ranking ol li:nth-child(1){
+    background: #1e2d40;
+    border-left: 4px solid gold;
+}
+.card-ranking ol li:nth-child(2){
+    background: #1e2d40;
+    border-left: 4px solid silver;
+}
+.card-ranking ol li:nth-child(3){
+    background: #1e2d40;
+    border-left: 4px solid #cd7f32;
+}
+
+.dashboard{
+    display: flex;
+    gap: 30px;
+}
+
+/* Colunas */
+.col-esquerda, .col-direita {
+    flex: 1;
+}
+
+/* Card Destaques */
+.card-destaques{
+    background: #0c0c0c;
+    color: #fff;
+    border: 2px solid #567ebb;
+    padding: 20px;
+    width: 62%;
+    height: 80%;
+    margin-left: 20%;
+    margin-top: 70px;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(87, 80, 80, 0.4);
+    font-family: "Lexend", sans-serif;
+}
+
+.card-destaques h3{
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #2e2e2e;
+    padding-bottom: 6px;
+}
+
+.card-destaques ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.card-destaques ul li{
+    margin: 8px 0;
+    padding-left: 10px;
+    border-left: 3px solid #ffae00;
+    font-size: 0.95rem;
+}
+
+/* Card Cotação */
+.card-combustivel{
+    background: #0c0c0c;
+    color: #fff;
+    border: 2px solid #567ebb;
+    padding: 20px;
+    width: 70%;
+    margin-left: 20%;
+    margin-top: -60px;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(87, 80, 80, 0.4);
+    font-family: "Lexend", sans-serif;
+}
+
+.card-combustivel h3{
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #2e2e2e;
+    padding-bottom: 6px;
+}
+
+.card-combustivel table{
+    width: 100%;
+    height: 20px;
+    border-collapse: collapse;
+}
+
+.card-combustivel td{
+    padding: 8px 0;
+    font-size: 0.95rem;
+}
+
+.card-combustivel tr td:first-child{
+    color: #ebebf8;
+}
+
+.card-combustivel tr td:last-child{
+    text-align: right;
+    font-weight: bold;
+    color: #bec8d1;
+}
+
+/*footer*/
+.footer {
+    background: #0c0c0c;
+    color: #bbb;
+    padding: 20px;
+    text-align: center;
+    font-family: "Lexend", sans-serif;
+    font-size: 0.9rem;
+    border-top: 1px solid #2e2e2e;
+    margin-top: 80px;
+}
+
+.footer span {
+    color: #3ba5ff;
+    font-weight: 500;
+}
+
+.oo img{
+  z-index: -1;
+  position: relative;
+  margin-top: -500px;
+  left: 75%;
+  transform: rotate(30deg);
+}

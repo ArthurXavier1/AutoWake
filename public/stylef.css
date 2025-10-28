@@ -1,0 +1,66 @@
+body {
+    font-family: 'DejaVu Sans', sans-serif;
+    padding: 30px;
+    background-image: url('fundo.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+    color: #dce0e6;
+}
+
+.container {
+    background-color: rgba(31, 31, 32, 0.6);
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 600px;
+    margin: auto;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+h1, h2 {
+    color: #4eaff7;
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+button {
+    margin-top: 20px;
+    background-color: #4eaff7;
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+}
+
+a {
+    margin-left: 15px;
+    color: #4eaff7;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.img-icon {
+    width: 100px;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

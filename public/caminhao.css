@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: 400;
+}
+
+body{
+    color: white;
+    font-family: "Nunito", sans-serif;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+
+    button{
+        background: linear-gradient(90deg, #2b4c7e 0%, #dce0e688 100%);
+        border: 2px solid #2b4c7e;
+    }
+}
+
+
+input{
+    background-color: #1f1f20;
+    border-radius: 10px;
+    height: 37px;
+    border: none;
+    padding-left: 20px; 
+    color: white; 
+    box-sizing: border-box; 
+}
+
+input::placeholder{
+    font-weight: bold;
+    color: #aaa; 
+}
+
+button{
+    font-weight: bold;
+    color: #1f1f20;
+    height: 35px;
+    border-radius: 7px;
+    margin-top: 15px;
+    font-size: 16px;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+button:hover{
+    transform: translateY(-2px);
+}
+
+h2{
+    text-align: center;
+    font-family: "Lexend", sans-serif;
+    font-weight: bold;
+    font-size: 35px;
+    margin-bottom: 20px;
+    color: #dce0e6;
+}
+
+select{
+     background-color: #1f1f20;
+    border-radius: 10px;
+    height: 37px;
+    border: none;
+    padding-left: 20px; 
+    color: white; 
+    box-sizing: border-box; 
+
+}
+
+option{
+    background-color: #19191b;
+    font-weight: bold;
+}
+
+img{
+    position: relative;
+    width: 90%;
+    right: 150px;
+}
+
+
+.containerPai{
+    width: 100%;
+    height: 100vh;
+    background-image: url(img/fundo.png);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    width: 80%;
+    height: 90vh;
+    background: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(20px); 
+    -webkit-backdrop-filter: blur(10px); 
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+    box-shadow: 30px 35px 30px rgba(0, 0, 0, 0.727);
+    border-radius: 32px;
+    padding: 32px 20px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.FormCadastro{
+    width: 30%;
+    margin-right: 10%;
+    position: absolute;
+}
+
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
