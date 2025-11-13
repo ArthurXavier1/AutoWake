@@ -39,10 +39,11 @@
             <span class="link-text">Dashboard</span>
         </a>    
 
-        <a class="" href="#">
+        <a href="{{ route('exibe_chatbot') }}">
             <i class="bi bi-chat-dots-fill"></i>
-            <span class="link-text">Chat</span>
+            <span class="link-text">Chatbot</span>
         </a>
+
     </div>
 
     <div id="carouselExampleDark" class="carousel carousel-dark slide">

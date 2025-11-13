@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('frete.css') }}">
+    <link rel="icon" href="{{ asset('Img/Icon.png') }}" type="image/png">
     <title>Cadastro de Frete</title>
 </head>
 <body>
@@ -16,13 +17,14 @@
                 <h2>Cadastre seu Frete</h2>
 
                 <!-- Formulário com o método POST e CSRF token -->
-                <form method="POST" action="{{ route('cadastro.store') }}">
+                <form method="POST" action="{{ route('cadastro.processaFrete') }}">
                     @csrf
                 @if(session('success'))
-                    <div class="alert alert-success">
-                            {{ session('success') }}
-                        </div>
-                @endif
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
 
                     <input type="text" name="email_comerciante" placeholder="Email Comerciante" required>
 
@@ -49,7 +51,7 @@
                     <input type="number" name="capacidade_carga" placeholder="Capacidade de carga (ton)" step="0.1">
                     <input type="text" name="observacoes" placeholder="Observações">
 
-                    <button type="submit">Cadastrar caminhão</button>
+                    <button type="button" onclick="window.location.href='AutoWake';">Cadastrar caminhão</button>
                 </form>
             </div>
         </div>

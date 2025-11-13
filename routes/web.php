@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Funcionarios_webController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AutowakeController;
@@ -16,6 +17,8 @@ use App\Http\Controllers\PerfilController;
 use App\Http\Controllers\EditarController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\RotasController;
+use App\Http\Controllers\ChatbotController;
+use App\Http\Controllers\InternalChatController;
 use App\Http\Middleware\Auth_API as MiddlewareAuth_API;
 
 Route::get('/', function () {
@@ -44,7 +47,9 @@ Route::get('/Principal', [PrincipalConttroller::class, 'exibe_principal'])->name
 
 Route::get('/Cadastro_Caminhao', [CaminhaoController::class, 'exibe_caminhao'])->name ('exibe_caminhao');
 
-Route::get('/Cadastro_Fretes', [FreteController::class, 'exibe_Fretes'])->name('exibe_Fretes');
+
+Route::get('/Cadastro_Fretes', [FreteController::class, 'exibe_Fretes'])->name('cadastro.form');
+Route::post('/Cadastro_Fretes', [FreteController::class, 'processaFrete'])->name('cadastro.processaFrete');
 
 Route::get('/DashboardAuto', [DashboardController::class, 'exibe_DashboardAuto'])->name('exibe_DashboardAuto');
 
@@ -61,5 +66,15 @@ Route::get('Editar_Perfil', [EditarController::class, 'exibe_editarperfil'])->na
 Route::get('Iniciar_Rotas', [RotasController::class, 'exibe_rotas'])->name('exibe_rotas');
 
 Route::resource('relatorios', Relatorios_webController::class);
+
+Route::resource('funcionarios', Funcionarios_webController::class);
+
+Route::get('/chatbot', [ChatbotController::class, 'exibe_chatbot'])->name('exibe_chatbot');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/internal-chat', [InternalChatController::class, 'index'])->name('internal_chat.index');
+    Route::post('/internal-chat/send', [InternalChatController::class, 'sendMessage'])->name('internal_chat.send');
+    Route::get('/internal-chat/messages', [InternalChatController::class, 'getMessages'])->name('internal_chat.get');
+});
 
 require __DIR__.'/auth.php';

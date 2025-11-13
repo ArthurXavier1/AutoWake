@@ -121,7 +121,7 @@
           <div class="row"><span class="muted">Ano</span><strong>2018</strong></div>
           <div class="row"><span class="muted">Placa</span><strong>RST-9F21</strong></div>
           <div class="row"><span class="muted">Rastreador</span><strong>AW-TRK-0087</strong></div>
-          <a id="cadastro_caminhao" href="{{ route('exibe_Fretes') }}" class="btn-perfil">Cadastrar</a>
+          <a id="cadastro_caminhao" href="{{ route('exibe_caminhao') }}" class="btn-perfil">Cadastrar</a>
         
 
 
